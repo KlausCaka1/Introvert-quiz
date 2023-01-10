@@ -1,0 +1,30 @@
+<div class="main">
+  <h3 class="title">Quiz to find if you are Extrovert of Introvert</h3>
+  <div *ngFor="let quiz of quizzes;  let i = index">
+    <div *ngIf="i === nrQuestion" class="container">
+      <h3 class="container__title">{{quiz.title}}</h3>
+      <span class="container__required">All question are required</span>
+      <ul style="list-style: none">
+        <li class="container__questions"
+            *ngFor="let questions of quiz.questions let j = index">
+          <input type="radio" class="container-input" [name]="'question' + i" [id]="questions.points" [value]="questions.points" [(ngModel)]="point">
+          <label [for]="questions.points" class="container__question__label">
+            <span class="container__questions__order">{{questions.order}}</span> <span>{{questions.text}}</span>  </label>
+        </li>
+      </ul>
+      <div class="container__buttons">
+        <button class="container__buttons__button"
+                *ngIf="i !== 0"
+                (click)="goToPreviousQuestion()">Previous Questions</button>
+        <button class="container__buttons__button"
+                *ngIf="i !== quizzes.length - 1"
+                [disabled]="point === 0"
+                (click)="nextQuestion()">Next Questions</button>
+        <button class="container__buttons__button"
+                *ngIf="i === quizzes.length - 1"
+                [disabled]="point === 0"
+                (click)="goToResults()">See Results</button>
+      </div>
+    </div>
+  </div>
+</div>
