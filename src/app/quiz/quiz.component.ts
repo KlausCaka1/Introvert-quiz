@@ -32,6 +32,7 @@ export class QuizComponent implements OnInit {
         this.nrQuestion = params['questionIndex'] ? parseInt(params['questionIndex']) : 0
       })
     ).subscribe()
+
     this.clientService.getQuestions().pipe(
       map(res => res),
       tap(res => {
