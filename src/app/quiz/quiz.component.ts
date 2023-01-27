@@ -15,6 +15,7 @@ export class QuizComponent implements OnInit {
   public nrQuestion: number = 0
   public points: number[] = []
   public point: number = 0
+  public orders: string[] = ['A', 'B', 'C', 'D']
 
   constructor(
     private clientService: ClientService,
@@ -36,7 +37,12 @@ export class QuizComponent implements OnInit {
     this.clientService.getQuestions().pipe(
       map(res => res),
       tap(res => {
-        this.quizzes = res
+        this.quizzes = res.map(item => {
+          return {
+            title: item.title,
+            questions: item.questions.sort((a,b) => 0.5 - Math.random())
+          }
+        })
       })
     ).subscribe()
   }

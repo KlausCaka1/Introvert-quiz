@@ -9,7 +9,7 @@
             *ngFor="let questions of quiz.questions let j = index">
           <input type="radio" class="container-input" [name]="'question' + i" [id]="questions.points" [value]="questions.points" [(ngModel)]="point">
           <label [for]="questions.points" class="container__question__label">
-            <span class="container__questions__order">{{questions.order}}</span> <span>{{questions.text}}</span>  </label>
+            <span class="container__questions__order">{{orders[j]}}</span> <span>{{questions.text}}</span>  </label>
         </li>
       </ul>
       <div class="container__buttons">
