@@ -53,9 +53,25 @@ describe('QuizComponent', () => {
     service.getQuestions().subscribe(res => {
       component.nrQuestion = res.length;
       component.goToPreviousQuestion()
-      console.log(component.nrQuestion)
       expect(component.nrQuestion).toBeLessThan(res.length)
     })
+    const req = httpController.expectOne('assets/quiz-mock-data.json');
+
+    expect(req.request.method).toEqual("GET");
+
+    req.flush(Object.values(QUIZ));
+  })
+
+  it('Sum of questions not be 0', () => {
+    service.getQuestions().subscribe(res => {
+      component.nrQuestion = res.length;
+      res.map(quiz => {
+        component.points.push(quiz.questions[Math.floor((Math.random() * (res.length - 1)))].points)
+      })
+      const sum = component.getSumOfPoints()
+      expect(sum).toBeGreaterThan(0)
+    })
+
     const req = httpController.expectOne('assets/quiz-mock-data.json');
 
     expect(req.request.method).toEqual("GET");

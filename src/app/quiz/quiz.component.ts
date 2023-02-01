@@ -58,12 +58,16 @@ export class QuizComponent implements OnInit {
   }
 
   goToResults() {
-    const sum = this.points.reduce((sum, point) => sum + point)
+    const sum = this.getSumOfPoints()
     this.router.navigate(['/results'], {
       queryParams: {
         pointSum: sum
       }
     })
+  }
+
+  getSumOfPoints() {
+    return this.points.reduce((sum, point) => sum + point)
   }
 
   goToPreviousQuestion() {
