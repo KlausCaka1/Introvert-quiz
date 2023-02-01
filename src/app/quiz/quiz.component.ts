@@ -10,8 +10,8 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  public quizzes!: Quiz[]
 
+  public quizzes!: Quiz[]
   public nrQuestion: number = 0
   public points: number[] = []
   public point: number = 0
@@ -47,16 +47,14 @@ export class QuizComponent implements OnInit {
     ).subscribe()
   }
 
+  getQuestions() {
+    return
+  }
+
   nextQuestion() {
     this.points.push(this.point)
     this.nrQuestion++
-    this.router.navigate(['/'], {
-      queryParams: {
-        points: this.points,
-        questionIndex: this.nrQuestion
-      },
-      replaceUrl: true
-    })
+    this.navigateToNextQuestion()
   }
 
   goToResults() {
@@ -71,6 +69,10 @@ export class QuizComponent implements OnInit {
   goToPreviousQuestion() {
     this.points.splice(this.points.length - 1, 1)
     this.nrQuestion--
+    this.navigateToNextQuestion()
+  }
+
+  navigateToNextQuestion() {
     this.router.navigate(['/'], {
       queryParams: {
         points: this.points,

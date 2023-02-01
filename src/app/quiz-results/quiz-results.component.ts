@@ -9,7 +9,9 @@ import {tap} from "rxjs";
 })
 export class QuizResultsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   public points!: number
@@ -22,4 +24,7 @@ export class QuizResultsComponent implements OnInit {
     ).subscribe()
   }
 
+  reTakeTest() {
+    this.router.navigate(['/'])
+  }
 }

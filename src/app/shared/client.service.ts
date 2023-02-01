@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Quiz} from "./client-model";
 
 @Injectable({
@@ -15,6 +15,8 @@ export class ClientService {
   ) { }
 
   public getQuestions(): Observable<Quiz[]> {
-    return this.http.get<Quiz[]>(this.mockDataUrl)
+    return this.http.get<Quiz[]>(this.mockDataUrl).pipe(
+      map(res => res)
+    )
   }
 }

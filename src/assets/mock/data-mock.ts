@@ -1,0 +1,128 @@
+export const QUIZ: any = [
+  {
+    "title": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
+    "questions": [
+      {
+        "text": "Don’t dare to interrupt them",
+        "points": 1,
+        "order" : "A"
+      },
+      {
+        "text": "Listen, but with only with half an ear",
+        "points": 3,
+        "order" : "B"
+      },
+      {
+        "text": "Interrupt and explain that you are really busy at the moment",
+        "points": 4,
+        "order" : "C"
+      },
+      {
+        "text": "Think it’s more important to give them some of your time; work can wait",
+        "points": 2,
+        "order" : "D"
+      }
+    ]
+  },
+  {
+    "title": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
+    "questions": [
+      {
+        "text": "Bubble with inner anger, but keep quiet",
+        "points": 2,
+        "order" : "B"
+      },
+      {
+        "text": "Explain to other equally impatient people in the room that the doctor is always running late",
+        "points": 3,
+        "order" : "B"
+      },
+      {
+        "text": "Complain in a loud voice, while tapping your foot impatiently",
+        "points": 4,
+        "order" : "C"
+      },
+      {
+        "text": "Look at your watch every two minutes",
+        "points": 1,
+        "order" : "D"
+      }
+    ]
+  },
+  {
+    "title": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
+    "questions": [
+      {
+        "text": "Don’t dare contradict them",
+        "points": 1,
+        "order" : "A"
+      },
+      {
+        "text": "Think that they are obviously right",
+        "points": 2,
+        "order" : "B"
+      },
+      {
+        "text": "Continuously interrupt your colleague",
+        "points": 4,
+        "order" : "C"
+      },
+      {
+        "text": "Defend your own point of view, tooth and nail",
+        "points": 3,
+        "order" : "D"
+      }
+    ]
+  },
+  {
+    "title": "You are taking part in a guided tour of a museum. You:",
+    "questions": [
+      {
+        "text": "Make sure that everyone is able to hear properly",
+        "points": 3,
+        "order" : "C"
+      },
+      {
+        "text": "Are a bit too far towards the back so don’t really hear what the guide is saying",
+        "points": 1,
+        "order" : "B"
+      },
+      {
+        "text": "Follow the group without question",
+        "points": 2,
+        "order" : "C"
+      },
+      {
+        "text": "Are right up the front, adding your own comments in a loud voice",
+        "points": 4,
+        "order" : "D"
+      }
+    ]
+  },
+  {
+    "title": "During dinner parties at your home, you have a hard time with people who:",
+    "questions": [
+      {
+        "text": "Ask you to tell a story in front of everyone else",
+        "points": 1,
+        "order" : "A"
+      },
+      {
+        "text": "Hang around you all evening",
+        "points": 3,
+        "order" : "B"
+      },
+      {
+        "text": "Talk privately between themselves",
+        "points": 2,
+        "order" : "C"
+      },
+      {
+        "text": "Always drag the conversation back to themselves",
+        "points": 4,
+        "order" : "D"
+      }
+    ]
+  }
+]
+
